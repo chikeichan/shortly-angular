@@ -17,7 +17,7 @@ angular.module('shortly', [
     })
     // Your code here
     .when('/links', {
-      templateUrl: 'app/links/links.html',
+      template: '<link-widget></link-widget>',
       controller: 'LinksController',
       authenticate: true
     })

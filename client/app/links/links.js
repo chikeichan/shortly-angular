@@ -5,4 +5,16 @@ angular.module('shortly.links', [])
   $scope = angular.extend($scope, Links);
   $scope.getLinks();
   //console.log($scope.data.links)
+}).
+
+directive('linkWidget', function(){
+  function link(scope, element, attrs) {
+
+  };
+
+  return {
+    restrict: 'E',
+    scope: false,
+    templateUrl: 'app/links/links.html',
+  }
 });
