@@ -1,4 +1,19 @@
-<div id='container'>
+<div id='container' ng-controller='LinksController'>
   <!-- Your html here -->
   <h1>Links Template</h1>
+  <label>Search</label>
+  <input type='text' ng-model='search'></input>
+
+  <div ng-repeat='link in data.links | filter:search | orderBy:"-visits"' >
+    <span>{{link.title}}</span>
+    <a href="{{ link.base_url+'/api/links/'+link.code }}">{{ link.base_url+'/api/links/'+link.code }}</a>
+    <span>{{link.visits}}</span>
+  <div>
 </div>
+
+<!-- _id: "54b99fe2800c5a451f05ade9"
+base_url: "http://localhost:8000"
+code: "738dd"
+title: "Google"
+url: "http://www.google.com"
+visits: 0 -->

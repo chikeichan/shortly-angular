@@ -9,6 +9,7 @@ angular.module('shortly.auth', [])
   $scope.signin = function () {
     Auth.signin($scope.user)
       .then(function (token) {
+        console.log("Token:", token);
         $window.localStorage.setItem('com.shortly', token);
         $location.path('/links');
       })
@@ -20,6 +21,7 @@ angular.module('shortly.auth', [])
   $scope.signup = function () {
     Auth.signup($scope.user)
       .then(function (token) {
+        console.log("Token:", token);
         $window.localStorage.setItem('com.shortly', token);
         $location.path('/links');
       })
